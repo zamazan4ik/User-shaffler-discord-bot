@@ -53,12 +53,11 @@ async def shuffleIvan(message: discord.Message):
 
 @client.event
 async def on_ready():    
-    print(f'Bot runned')
+    print(f'Bot ran')
 
 
 @client.event
 async def on_message(message: discord.Message):
-
     currentDateTime: datetime = datetime.now()
     
     if (currentDateTime - botState["lastShuffle"]).total_seconds() >= int(environmentConfig["timeoutDuration"]) * 60:
